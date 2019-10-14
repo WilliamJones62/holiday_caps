@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<table id="normal_dt"  class="stripe" class="mytable" class="display" cellspacing="0" >
+  <thead>
+    <tr>
+      <th>DC</th>
+      <th>Channel</th>
+      <th>Part</th>
+      <th>Cap</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @turkey_caps.each do |turkey_cap| %>
+      <tr>
+        <td>&nbsp;&nbsp;<%= turkey_cap.dc %></td>
+        <td>&nbsp;&nbsp;<%= turkey_cap.channel %></td>
+        <td>&nbsp;&nbsp;<%= turkey_cap.part %></td>
+        <td>&nbsp;&nbsp;<%= turkey_cap.cap %></td>
+        <td><%= link_to 'Edit', edit_turkey_cap_path(turkey_cap), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Delete', turkey_cap, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Turkey Cap', new_turkey_cap_path, class: "btn btn-primary" %>
+
+<h2>Import Caps</h2>
+<%= form_tag import_turkey_caps_path, multipart:true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

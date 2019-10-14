@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dc: MyString
+  channel: MyString
+  part: MyString
+  units: MyString
+
+two:
+  dc: MyString
+  channel: MyString
+  part: MyString
+  units: MyString
