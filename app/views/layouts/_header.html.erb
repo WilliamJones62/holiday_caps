@@ -4,10 +4,6 @@
   <span><a href="/", class="btn btn-primary">Index</a></span>
   <% if user_signed_in? %>
     <span><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-primary" %></span>
-    <% if current_user.email == 'admin' %>
-      <span><%= link_to 'Sign up', new_user_registration_path, class: "btn btn-primary" %></span>
-      <span><%= link_to 'Missing', 'employees/missing', class: "btn btn-primary" %></span>
-    <% end %>
   <% else %>
     <span><%= link_to 'Sign in', new_user_session_path, class: "btn btn-primary" %></span>
   <% end %>
